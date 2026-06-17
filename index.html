@@ -14,33 +14,28 @@
     img { border: 0; outline: none; text-decoration: none; display: block; }
     body { margin: 0 !important; padding: 0 !important; background-color: #f0ebe5; }
 
-    /*
-      Aeonik Pro TRIAL — self-hosted font configured for email clients.
-      Note: For maximum email client compatibility (like Gmail), replace 
-      relative paths with absolute URLs (e.g., https://yourdomain.com/asset/fonts/...)
-    */
+    /* --- FIXED FONT PATHS FOR BROWSER LOADING --- */
     @font-face {
       font-family: 'Aeonik Pro TRIAL';
-      src: url('asset/font/AeonikPro-Bold.woff2') format('woff2'),
-           url('asset/font/AeonikPro-Bold.woff') format('woff'),
-           url('asset/font/AeonikProTrial-Bold.otf') format('opentype');
+        src:url('https://voluble-pasca-8393b4.netlify.app/asset/font/Aeonik Pro Bold.woff2') format('woff2'),
+            url('https://voluble-pasca-8393b4.netlify.app/asset/font/Aeonik Pro Bold.woff') format('woff'),
+            url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Bold.otf') format('opentype');
       font-weight: 700;
       font-style: normal;
     }
     @font-face {
       font-family: 'Aeonik Pro TRIAL';
-      src: url('asset/font/AeonikPro-Regular.woff2') format('woff2'),
-           url('asset/font/AeonikPro-Regular.woff') format('woff'),
-           url('asset/font/AeonikProTrial-Regular.otf') format('opentype');
+       src:url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.woff2') format('woff2'),
+           url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.woff') format('woff'),
+           url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
     }
-
-     @font-face {
+    @font-face {
       font-family: 'Aeonik Pro TRIAL';
-      src: url('asset/font/AeonikPro-Regular.woff2') format('woff2'),
-           url('asset/font/AeonikPro-Regular.woff') format('woff'),
-           url('asset/font/aeonikprotrial-light.otf') format('opentype');
+      src: url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.woff2') format('woff2'),
+           url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.woff') format('woff'),
+           url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.otf') format('opentype');
       font-weight: 300;
       font-style: normal;
     }
@@ -55,9 +50,40 @@
       .abs-leaf-bottom  { width: 170px !important; right: -20px !important; bottom: -20px !important; }
     }
   </style>
+  <link rel="preconnect" href="https://voluble-pasca-8393b4.netlify.app">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Bold.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.woff2">
 </head>
 <body style="margin:0;padding:0;background-color:#f0ebe5;font-family:'Aeonik Pro TRIAL', Arial, sans-serif;">
 
+<!-- Repeat @font-face inside body so browsers that strip <head> styles still load the font -->
+<style>
+  @font-face {
+    font-family: 'Aeonik Pro TRIAL';
+    src: url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Bold.woff2') format('woff2'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Bold.woff') format('woff'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Aeonik Pro TRIAL';
+    src: url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.woff2') format('woff2'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.woff') format('woff'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/AeonikProTrial-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Aeonik Pro TRIAL';
+    src: url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.woff2') format('woff2'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.woff') format('woff'),
+         url('https://voluble-pasca-8393b4.netlify.app/asset/font/aeonikprotrial-light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+</style>
 
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f0ebe5;">
   <tr>
@@ -68,20 +94,20 @@
 
         <!-- SECTION 1: LOGO -->
         <tr>
-          <td style="background-color:#ffffff; padding:0; position:relative; overflow:hidden;">
+          <td style="background-color:#ffffff; padding:0; position:relative;">
             
             <div style="width: 230px; z-index: 1; pointer-events: none;">
-              <img src="asset/leaf-watermark.svg" alt="" width="230" style="display: block;position: absolute;top: -73%;width: 374px;height: 362px;opacity: 1;transform: scaleX(-1) rotate(63deg);right: 58%;" />
+              <img src="https://voluble-pasca-8393b4.netlify.app/asset/leaf-watermark.svg" alt="" width="230" style="display: block;position: absolute;top: -73%;width: 374px;height: 362px;opacity: 1;transform: scaleX(-1) rotate(63deg);right: 58%;" />
             </div>
 
             <div style="position: absolute; top: 221px; right: -136px; width: 190px; z-index: 1; pointer-events: none; transform: rotate(133deg);">
-              <img src="asset/leaf-watermark.svg" alt="" width="190" style="    position: absolute;top: 44px;right: 4px;width: 161px; z-index: 1; pointer-events: none; transform: rotate(292deg);" />
+              <img src="https://voluble-pasca-8393b4.netlify.app/asset/leaf-watermark.svg" alt="" width="190" style="    position: absolute;top: 44px;right: 4px;width: 161px; z-index: 1; pointer-events: none; transform: rotate(292deg);" />
             </div>
 
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td align="center" valign="middle" style="padding:44px 0 24px; position:relative; z-index:2;">
-                  <img src="asset/Logo.png" alt="Tree of Elm" width="155" style="display:block; width:113px; max-width:155px; height:58px;" />
+                  <img src="https://voluble-pasca-8393b4.netlify.app/asset/Logo.png" alt="Tree of Elm" width="155" style="display:block; width:113px; max-width:155px; height:58px;" />
                 </td>
               </tr>
             </table>
@@ -95,9 +121,9 @@
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td class="hero-pad" valign="middle" align="center"
-                    background="asset/herobg.png"
+                    background="https://voluble-pasca-8393b4.netlify.app/asset/herobg.png"
                     style="
-                      background-image: url('asset/herobg.png');
+                      background-image: url('https://voluble-pasca-8393b4.netlify.app/asset/herobg.png');
                       background-size: 100% 100%;
                       background-position: center top;
                       background-repeat: no-repeat;
@@ -105,6 +131,7 @@
                       border-top-left-radius: 16px;
                       padding: 44px 40px 88px;
                       position: relative;
+                      z-index:1;
                     ">
                     
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -139,7 +166,7 @@
           <td class="body-pad" style="padding:40px 40px 40px; background-color:#ffffff; position:relative; overflow:hidden;">
             
             <div class="abs-leaf-bottom" style="position: absolute;bottom: 66px;right: 8px;width: 148px;z-index: 1;pointer-events: none;transform: rotate(6deg)">
-              <img src="asset/leaf-watermark.svg" alt="" width="240" style="display:block; width:106%; height:auto; opacity:1; transform: rotate(358deg);" />
+              <img src="https://voluble-pasca-8393b4.netlify.app/asset/leaf-watermark.svg" alt="" width="240" style="display:block; width:106%; height:auto; opacity:1; transform: rotate(358deg);" />
             </div>
 
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="position:relative; z-index:2;">
@@ -170,13 +197,13 @@
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td class="hero-pad" valign="middle" align="left" 
-                    background="asset/callout.png" 
-                    style="background-image: url('asset/callout.png'); background-size: 100% 100%; background-position: center center; background-repeat: no-repeat; padding:34px   24px; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+                    background="https://voluble-pasca-8393b4.netlify.app/asset/callout.png" 
+                    style="background-image: url('https://voluble-pasca-8393b4.netlify.app/asset/callout.png'); background-size: 100% 100%; background-position: center center; background-repeat: no-repeat; padding:34px   24px; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
                   
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
                       <td width="60" valign="middle" style="padding-right: 16px;">
-                        <img src="asset/phone-wh.svg" alt="Phone" width="44" height="44" style="display: block; width: 44px; height: 44px; border: 0;" />
+                        <img src="https://voluble-pasca-8393b4.netlify.app/asset/phone-wh.svg" alt="Phone" width="44" height="44" style="display: block; width: 44px; height: 44px; border: 0;" />
                       </td>
                       <td valign="middle">
                         <p style="margin: 0; font-family:'Aeonik Pro TRIAL', Arial, sans-serif; font-size: 17px; line-height: 140%; color: #054042;">
@@ -200,14 +227,14 @@
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td class="footer-col" width="50%" valign="middle" style=" padding-bottom:24px;">
-                  <img src="asset/Logo.png" alt="Tree of Elm" width="130" style="display:block; width:130px; max-width:130px; padding-left:15px; height:auto;" />
+                  <img src="https://voluble-pasca-8393b4.netlify.app/asset/Logo.png" alt="Tree of Elm" width="130" style="display:block; width:130px; max-width:130px; padding-left:15px; height:auto;" />
                 </td>
 
                 <td class="footer-col" width="50%" valign="top" style="padding-bottom:24px;">
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="44" valign="top" style="padding-right:10px;">
-                        <img src="asset/location.svg" alt="Location" width="36" style="display:block; width:50px; height:50px;" />
+                        <img src="https://voluble-pasca-8393b4.netlify.app/asset/location.svg" alt="Location" width="36" style="display:block; width:50px; height:50px;" />
                       </td>
                       <td valign="top" >
                         <p style="margin:0 0 2px; font-family:'Aeonik Pro TRIAL', Arial, sans-serif; font-size:14px; line-height:100%; color:#727272;">Location</p>
@@ -229,7 +256,7 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="50" valign="top" style="padding-right:10px;">
-                        <img src="asset/phone.svg" alt="Phone" width="36" style="display:block; width:60px; height:50px; " />
+                        <img src="https://voluble-pasca-8393b4.netlify.app/asset/phone.svg" alt="Phone" width="36" style="display:block; width:60px; height:50px; " />
                       </td>
                       <td valign="top" style="padding-top:10px;">
                         <p style="margin:0 0 4px; font-family:'Aeonik Pro TRIAL', Arial, sans-serif; font-size:14px; line-height:100%; color:#727272;">Call Us</p>
@@ -244,7 +271,7 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="50" valign="top" style="padding-right:10px;">
-                        <img src="asset/mail.svg" alt="Email" width="50" style="display:block; width:50px; height:50px;" />
+                        <img src="https://voluble-pasca-8393b4.netlify.app/asset/mail.svg" alt="Email" width="50" style="display:block; width:50px; height:50px;" />
                       </td>
                       <td valign="top" style="padding-top:10px;">
                         <p style="margin:0 0 4px; font-family:'Aeonik Pro TRIAL', Arial, sans-serif; font-size:14px; line-height:100%; color:#727272;">Email Us</p>
@@ -266,7 +293,7 @@
                 </td>
               </tr>
               <tr>
-                <td height="1" background="asset/footer-line.svg" style="background-image: url('asset/footer-line.svg'); background-size: 100% 1px; background-position: center top; background-repeat: repeat-x; height: 1px; font-size: 0; line-height: 0; padding: 0;">
+                <td height="1" background="https://voluble-pasca-8393b4.netlify.app/asset/footer-line.svg" style="background-image: url('https://voluble-pasca-8393b4.netlify.app/asset/footer-line.svg'); background-size: 100% 1px; background-position: center top; background-repeat: repeat-x; height: 1px; font-size: 0; line-height: 0; padding: 0;">
                   &nbsp;
                 </td>
               </tr>
